@@ -32,7 +32,8 @@ A Python-powered web app to track and visualize airline booking trends across ro
 
 ## 📸 Screenshot - preview
 
-![Dashboard Scrrenshot](assets/Screenshot%202025-07-03%20213350.png)
+![Dashboard Screenshot](assets/Screenshot%202025-07-03%20213350.png)
+![Logs](assets/Screenshot%202025-07-03%20214613.png)
 
 ## Video - preview
 
