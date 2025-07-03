@@ -1,0 +1,101 @@
+/* styles.css */
+
+:root {
+    --bg-color-1: #1e3c72;
+    --bg-color-2: #2a5298;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --accent: #00d4ff;
+    --button-bg: #00d4ff;
+    --button-hover: #00a8cc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, var(--bg-color-1), var(--bg-color-2), #0f2027, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--accent);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+select, button {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: none;
+    min-width: 180px;
+}
+
+select {
+    background-color: #fff;
+    color: #000;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#insight {
+    white-space: pre-line;
+}

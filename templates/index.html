@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airline Market Demand</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+    <h1>Airline Booking Market Demand</h1>
+
+    <!-- Filter Form -->
+    <form method="get" action="/">
+    <label for="departure">From City (IATA):</label>
+    <select name="departure" id="departure">
+        <option value="">All</option>
+        {% for dep in unique_departures %}
+            <option value="{{ dep }}" {% if dep == dep_filter %}selected{% endif %}>{{ dep }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="arrival">To City (IATA):</label>
+    <select name="arrival" id="arrival">
+        <option value="">All</option>
+        {% for arr in unique_arrivals %}
+            <option value="{{ arr }}" {% if arr == arr_filter %}selected{% endif %}>{{ arr }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="airline">Airline:</label>
+    <select name="airline" id="airline">
+        <option value="">All</option>
+        {% for air in unique_airlines %}
+            <option value="{{ air }}" {% if air == airline_filter %}selected{% endif %}>{{ air }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Filter</button>
+</form>
+
+
+    <!-- Chart Section -->
+    <h2>Top 10 Popular Flight Routes</h2>
+    <canvas id="routeChart" width="600" height="300"></canvas>
+
+    <!-- AI Insight Section -->
+    <h3>AI-Powered Insight</h3>
+    <p id="insight">{{ insight }}</p>
+
+    <!-- Chart.js Script -->
+    <script>
+        const routeLabels = {{ routes.keys()|list|tojson }};
+        const routeValues = {{ routes.values()|list|tojson }};
+
+        const ctx = document.getElementById('routeChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: routeLabels,
+                datasets: [{
+                    label: 'Flight Count',
+                    data: routeValues,
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#ffffff'
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.1)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#ffffff'
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.1)'
+                        },
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#222',
+                        titleColor: '#00d4ff',
+                        bodyColor: '#fff'
+                    }
+                }
+            }
+        });
+    </script>
+  </div>
+</body>
+</html>
