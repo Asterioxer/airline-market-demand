@@ -77,7 +77,7 @@ python app.py
 Visit http://127.0.0.1:5000 in your browser.
 
 ### ⚙️ Project Structure is provided as follows
-(by arduino)
+```arduino
 airline-market-demand/
 ├── app.py
 ├── templates/
@@ -87,6 +87,7 @@ airline-market-demand/
 ├── .env
 ├── requirements.txt
 └── README.md
+```
 
 ### 🎯 Use Case
 - This dashboard is designed for hospitality or travel industry professionals to:
