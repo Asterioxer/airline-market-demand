@@ -88,29 +88,29 @@ airline-market-demand/
 └── README.md
 
 ### 🎯 Use Case
-# - This dashboard is designed for hospitality or travel industry professionals to:
+- This dashboard is designed for hospitality or travel industry professionals to:
 
-# - Monitor flight route demands in real-time
+- Monitor flight route demands in real-time
 
-# - Compare trends using filters and visual insights
+- Compare trends using filters and visual insights
 
-# - Use AI-generated summaries for faster decisions
+- Use AI-generated summaries for faster decisions
 
-# - Share and operate without needing coding expertise
+- Share and operate without needing coding expertise
 
 
 ### 💡 Future Enhancements
 
-# 🔍 Searchable dropdowns
+🔍 Searchable dropdowns
 
-# 📈 Historical data visualization
+📈 Historical data visualization
 
-# 🌐 Multi-language support
+🌐 Multi-language support
 
-# 📱 Responsive/mobile UI
+📱 Responsive/mobile UI
 
 # 📄 License
-# - This project is open for educational and professional evaluation use. Reach out for full-time collaborations or enhancements.
+- This project is open for educational and professional evaluation use. Reach out for full-time collaborations or enhancements.
 
 👋 Author
 Soham Mukherjee
